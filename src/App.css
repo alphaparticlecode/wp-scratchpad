@@ -1,4 +1,6 @@
 .App {
+  margin-bottom: 25px;
+  min-width: 500px;
   text-align: center;
 }
 
