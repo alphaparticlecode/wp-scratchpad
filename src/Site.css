@@ -1,0 +1,32 @@
+.site {
+	display: block;
+	margin: 0 auto;
+	max-width: 400px;
+	text-align: left;
+}
+
+.site label {
+	display: block;
+	text-align: left;
+}
+
+.site input {
+	border: 1px solid #ccc;
+	box-shadow: none;
+	border-radius: 5px;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+	padding: 10px;
+	width: 100%;
+}
+
+.site button {
+	background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+}
