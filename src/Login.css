@@ -1,0 +1,71 @@
+.login {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    padding-top: 10px;
+    text-align: left;
+    transition: height 500ms 0ms, opacity 500ms 500ms;
+}
+
+.login .hidden {
+    transition: height 500ms 500ms, opacity 500ms 0ms;
+    opacity: 0.0;
+    height: 0px;
+}
+
+.login label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.login .currentuser {
+	display: inline-block;
+    font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.login input {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.login button {
+	background: transparent;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.login input[type="submit"] {
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    margin-top: 10px;
+    max-width: 100px;
+    width: 100%;
+}

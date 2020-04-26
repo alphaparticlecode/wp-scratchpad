@@ -1,5 +1,7 @@
 .site {
+	border-bottom: 1px solid #ccc;
 	display: block;
+	padding-bottom: 10px;
 	margin: 0 auto;
 	max-width: 400px;
 	text-align: left;
@@ -9,11 +11,14 @@
 .site .hidden {
 	transition: height 500ms 500ms, opacity 500ms 0ms;
 	opacity: 0.0;
+	overflow: hidden;
 	height: 0px;
 }
 
 .site label {
 	display: block;
+	font-size: 14px;
+    font-weight: bold;
 	text-align: left;
 }
 
@@ -31,6 +36,7 @@
 
 .site .siteurl {
 	display: inline-block;
+	font-size: 14px;
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-right: 20px;
