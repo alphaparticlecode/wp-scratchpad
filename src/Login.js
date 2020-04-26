@@ -60,7 +60,7 @@ function Login() {
 			const requestOptions = {
 				headers: new Headers({
 			    	'Authorization': 'Bearer ' + localStorage.getItem('scratchpadJWT'), 
-				}), 
+				})
 			}
 
 			fetch(validateUrl, requestOptions)
