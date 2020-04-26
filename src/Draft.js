@@ -48,7 +48,9 @@ function Draft() {
 					setPostTitle('');
 					setpostContent('');
 
-					// Clear postLink after a 5 second timeout
+					setTimeout(function(){
+						setpostLink('');
+					}, 5000);
 				}
 				else {
 					setErrorMessage('There was an error submitting your post. Please make sure your WordPress site is responding or try again later.');	
