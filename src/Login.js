@@ -22,7 +22,8 @@ function Login() {
 			body: JSON.stringify({
 				api_key: api_key,
 				api_secret: api_secret
-			})
+			}),
+			mode: 'cors'
 		};
 
 		var tokenUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/token';
@@ -72,7 +73,8 @@ function Login() {
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify({
 							refresh_token: localStorage.getItem('scratchpadJWTRefresh'),
-						})
+						}),
+						mode: 'cors'
 					};
 
 					var tokenUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/token';

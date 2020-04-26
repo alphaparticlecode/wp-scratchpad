@@ -27,7 +27,8 @@ function Draft() {
 				title: postTitle.trim(),
 				content: postContent.trim(),
 				status: 'draft'
-			})
+			}),
+			mode: 'cors'
 		};
 
 		var postUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/posts';

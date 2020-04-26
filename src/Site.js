@@ -27,7 +27,7 @@ function Site() {
 
 		let url = `${slashedSiteURL}wp-json/`;
 
-		fetch(url)
+		fetch(url, { mode: 'cors' })
 		  .then((response) => {
 		    return response.json();
 		  })
