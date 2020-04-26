@@ -29,15 +29,24 @@
 	width: 100%;
 }
 
+.site .siteurl {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
 .site button {
 	background: transparent;
     border: 1px solid #ccc;
     cursor: pointer;
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
+    vertical-align: middle;
 }
 
 .site input.error {

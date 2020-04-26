@@ -32,7 +32,7 @@ function Site() {
 		    return response.json();
 		  })
 		  .then((data) => {
-		    if( data.authentication.oauth1 ) {
+		    if( data.routes["/wp/v2/token"] ) {
 				setErrors(false);
 				// Save the site URL to local storage
 				localStorage.setItem('scratchpadSiteURL', url);
@@ -42,7 +42,7 @@ function Site() {
 		    }
 		    else {
 				// Display error message that oauth must be enabled
-				setErrorMessage('OAuth not detected. Make sure the OAuth plugin is installed and activated.');				
+				setErrorMessage('JWT routes not detected. Make sure the JWT plugin is installed and activated.');				
 
 				setErrors(true);
 		    }
@@ -63,7 +63,10 @@ function Site() {
 
 	return (
 		<div className="site">
-			<button className={`${siteFormVisible ? 'hidden' : ''}`} onClick={siteVisible}>Edit Site</button>
+			<div className={`${siteFormVisible ? 'hidden' : ''}`}>
+				<p className="siteurl">Current URL: {siteURL}</p>
+				<button onClick={siteVisible}>Edit Site</button>
+			</div>
 			
 			<form action="" onSubmit={saveSite} className={`${siteFormVisible ? '' : 'hidden'}`}>
 				<label htmlFor="siteURL">Site URL</label>
