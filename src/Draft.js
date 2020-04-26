@@ -19,16 +19,19 @@ function Draft() {
 	function savePostDraft(event){
 		const requestOptions = {
 			method: 'POST',
-			headers: new Headers({
+			headers: {
 				'Authorization': 'Bearer ' + localStorage.getItem('scratchpadJWT'), 
 				'Content-Type': 'application/json'
-			}),
+			},
 			body: JSON.stringify({
 				title: postTitle.trim(),
 				content: postContent.trim(),
 				status: 'draft'
 			}),
-			mode: 'cors'
+			mode: 'cors',
+			// TO-DO: Investigate why this is necessary to get it working from within the Chrome extension
+			// It works without omitting the creds when running from https://localhost:3000 or similar
+			credentials: 'omit'
 		};
 
 		var postUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/posts';
@@ -52,8 +55,6 @@ function Draft() {
 
 					setErrors(true);
 				}
-
-				console.log(post);
 			});
 
 		event.preventDefault();
