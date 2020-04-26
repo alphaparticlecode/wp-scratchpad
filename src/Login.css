@@ -21,6 +21,17 @@
     text-align: left;
 }
 
+.login input.error {
+    border: 2px solid red;
+    color: red;
+}
+
+.login .errors {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .login .currentuser {
 	display: inline-block;
     font-size: 14px;
