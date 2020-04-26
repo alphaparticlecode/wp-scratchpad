@@ -28,12 +28,12 @@ function Login() {
 		var tokenUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/token';
 
 		fetch(tokenUrl, requestOptions)
-        .then(response => response.json())
-        .then(data => {
+		.then(response => response.json())
+		.then(data => {
 			if( data.data.status ) {
 				setErrorMessage('Your credentials were invalid. Please double check your API key and API secret and try again.');	
 
-		    	setErrors(true);
+				setErrors(true);
 			}
 			else {
 				setUsername(data.data.user.user_login);
@@ -44,7 +44,7 @@ function Login() {
 
 				setLoginVisibility(false);
 			}
-        });
+		});
 
 		event.preventDefault();
 	}
@@ -59,13 +59,13 @@ function Login() {
 
 			const requestOptions = {
 				headers: new Headers({
-			    	'Authorization': 'Bearer ' + localStorage.getItem('scratchpadJWT'), 
+					'Authorization': 'Bearer ' + localStorage.getItem('scratchpadJWT'), 
 				})
 			}
 
 			fetch(validateUrl, requestOptions)
 			.then(response => response.json())
-	        .then(data => {
+			.then(data => {
 				if( data.code !== 'rest_authentication_valid_access_token' ){
 					const requestOptions = {
 						method: 'POST',
@@ -78,13 +78,15 @@ function Login() {
 					var tokenUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/token';
 					fetch(tokenUrl, requestOptions)
 					.then(response => response.json())
-			        .then(data => {
+					.then(data => {
 						if( data.data.status ) {
 							setErrorMessage('Your credentials were invalid. Please double check your API key and API secret and try again.');	
 
-					    	setErrors(true);
+							setErrors(true);
 						}
 						else {
+							setErrors(false);
+
 							setUsername(data.data.user.user_login);
 							localStorage.setItem('username', data.data.user.user_login);
 
@@ -93,13 +95,13 @@ function Login() {
 
 							setLoginVisibility(false);
 						}
-			        });
+					});
 				}
 				else {
 					setUsername(localStorage.getItem('username'));
 					setLoginVisibility(false);
 				}
-	        });
+			});
 		}
 	}
 

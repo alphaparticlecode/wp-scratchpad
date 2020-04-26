@@ -4,6 +4,7 @@
     margin: 0 auto;
     max-width: 400px;
     padding-top: 10px;
+    padding-bottom: 10px;
     text-align: left;
     transition: height 500ms 0ms, opacity 500ms 500ms;
 }
@@ -11,6 +12,7 @@
 .login .hidden {
     transition: height 500ms 500ms, opacity 500ms 0ms;
     opacity: 0.0;
+    overflow: hidden;
     height: 0px;
 }
 

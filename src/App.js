@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './Login';
 import Site from './Site';
-// import Draft from './Draft';
+import Draft from './Draft';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
       <Login />
 
-      {/* <Draft />*/}
+      <Draft />
     </div>
   );
 }

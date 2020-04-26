@@ -1,0 +1,66 @@
+.draft {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+	max-width: 400px;
+	text-align: left;
+	transition: height 500ms 0ms, opacity 500ms 500ms;
+}
+
+.draft .hidden {
+	transition: height 500ms 500ms, opacity 500ms 0ms;
+	opacity: 0.0;
+	overflow: hidden;
+	height: 0px;
+}
+
+.draft label {
+	display: block;
+	font-size: 14px;
+    font-weight: bold;
+	text-align: left;
+}
+
+.draft .postLink {
+	font-size: 14px;
+}
+
+.draft input {
+	border: 1px solid #ccc;
+	box-shadow: none;
+	border-radius: 5px;
+	display: block;
+	font-size: 14px;
+	height: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 100%;
+}
+
+.draft textarea {
+	border: 1px solid #ccc;
+	font-size: 14px;
+	margin-top: 10px;
+	padding: 10px;
+	width: 100%;
+}
+
+.draft p.errors.hidden {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.draft input[type="submit"] {
+	background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    margin-top: 10px;
+}
