@@ -46,6 +46,8 @@ function Login() {
 				localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
 
 				setLoginVisibility(false);
+
+				window.location.reload(false);
 			}
 		});
 
@@ -62,6 +64,8 @@ function Login() {
 		localStorage.setItem('username', '');
 
 		setLastUpdated(Date.now());
+
+		window.location.reload(false);
 	}
 
 	function validateOrRefreshJWT() {
@@ -120,8 +124,8 @@ function Login() {
 	return (
 		<div className="login">
 			<div className={`${loginFormVisible ? 'hidden' : ''}`}>
-				<p className="currentuser">Current User: {username}</p>
-				<button onClick={loginVisible}>Edit Login</button>
+				<p className="currentuser">Current User: {username ? username : 'Not Logged In'}</p>
+				<button onClick={loginVisible}>{username ? 'Edit Login' : 'Log In'}</button>
 				<button className={`logout ${username ? '' : 'hidden'}`} onClick={logOut}>Log Out</button>
 			</div>
 			
