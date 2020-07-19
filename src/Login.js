@@ -11,6 +11,8 @@ function Login() {
 	const [api_key, setAPIKey] = useState('');
 	const [api_secret, setAPISecret] = useState('');
 
+	const [last_updated, setLastUpdated] = useState();
+
 	useEffect(function(){
 		validateOrRefreshJWT();
 	}, []);
@@ -52,6 +54,14 @@ function Login() {
 
 	function loginVisible(){
 		setLoginVisibility(true);
+	}
+
+	function logOut(){
+		localStorage.setItem('scratchpadJWT', '');
+		localStorage.setItem('scratchpadJWTRefresh', '');
+		localStorage.setItem('username', '');
+
+		setLastUpdated(Date.now());
 	}
 
 	function validateOrRefreshJWT() {
@@ -112,6 +122,7 @@ function Login() {
 			<div className={`${loginFormVisible ? 'hidden' : ''}`}>
 				<p className="currentuser">Current User: {username}</p>
 				<button onClick={loginVisible}>Edit Login</button>
+				<button className={`logout ${username ? '' : 'hidden'}`} onClick={logOut}>Log Out</button>
 			</div>
 			
 			<form action="" onSubmit={saveLogin} className={`${loginFormVisible ? '' : 'hidden'}`}>
