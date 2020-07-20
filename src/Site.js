@@ -18,6 +18,18 @@ function Site() {
   	const [errorMessage, setErrorMessage] = useState('');
 
 	function saveSite(event){
+		setErrors(false);
+		event.preventDefault();
+
+		if( ! siteURL.includes('https') ) {
+			// Display error message that oauth must be enabled
+			setErrorMessage('Site URLs are required to be HTTPS.');				
+
+			setErrors(true);
+
+			return;
+		}
+
 		if( siteURL[siteURL.length - 1] !== '/' ) {
 			var slashedSiteURL = siteURL + '/';
 		}
@@ -33,7 +45,6 @@ function Site() {
 		  })
 		  .then((data) => {
 		    if( data.routes["/wp/v2/token"] ) {
-				setErrors(false);
 				// Save the site URL to local storage
 				localStorage.setItem('scratchpadSiteURL', url);
 
@@ -53,8 +64,6 @@ function Site() {
 
 		    setErrors(true);
 		  });
-
-		event.preventDefault();
 	}
 
 	function siteVisible() {
