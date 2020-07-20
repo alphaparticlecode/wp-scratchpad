@@ -16,6 +16,17 @@ function Draft() {
 	}
 	const [draftFormVisible, setDraftVisibility] = useState(componentVisible);
 
+	function stripScripts(s) {
+	    var div = document.createElement('div');
+	    div.innerHTML = s;
+	    var scripts = div.getElementsByTagName('script');
+	    var i = scripts.length;
+	    while (i--) {
+	      scripts[i].parentNode.removeChild(scripts[i]);
+	    }
+	    return div.innerHTML;
+	};
+
 	function savePostDraft(event){
 		const requestOptions = {
 			method: 'POST',
@@ -25,7 +36,7 @@ function Draft() {
 			},
 			body: JSON.stringify({
 				title: postTitle.trim(),
-				content: postContent.trim(),
+				content: stripScripts(postContent.trim()),
 				status: 'draft'
 			}),
 			mode: 'cors',
