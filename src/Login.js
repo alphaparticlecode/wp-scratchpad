@@ -8,8 +8,8 @@ function Login() {
 	const [loginFormVisible, setLoginVisibility] = useState(false);
 
 	const [username, setUsername] = useState('');
-	const [api_key, setAPIKey] = useState('');
-	const [api_secret, setAPISecret] = useState('');
+	const [api_key, setAPIKey] = useState( localStorage.getItem('temp-APIKEY') );
+	const [api_secret, setAPISecret] = useState( localStorage.getItem('temp-APISECRET') );
 
 	const [last_updated, setLastUpdated] = useState();
 
@@ -39,6 +39,10 @@ function Login() {
 				setErrors(true);
 			}
 			else {
+				// Clear temp local storage
+				localStorage.setItem('temp-APIKEY', '');
+				localStorage.setItem('temp-APISECRET', '');
+
 				setUsername(data.data.user.user_login);
 				localStorage.setItem('username', data.data.user.user_login);
 
@@ -66,6 +70,16 @@ function Login() {
 		setLastUpdated(Date.now());
 
 		window.location.reload(false);
+	}
+
+	function updateAPIKey(latestKey) {
+		localStorage.setItem('temp-APIKEY', latestKey);
+		setAPIKey(latestKey)
+	}
+
+	function updateAPISecret(latestSecret) {
+		localStorage.setItem('temp-APISECRET', latestSecret);
+		setAPISecret(latestSecret)
 	}
 
 	function validateOrRefreshJWT() {
@@ -132,10 +146,10 @@ function Login() {
 			<form action="" onSubmit={saveLogin} className={`${loginFormVisible ? '' : 'hidden'}`}>
 				<p className={`errors ${hasErrors ? '' : 'hidden'}`}>{errorMessage}</p>
 				<label htmlFor="api_key">API Key</label>
-				<input type="text" name="api_key" value={api_key} onChange={event => setAPIKey(event.target.value)}/>
+				<input type="text" name="api_key" value={api_key} onChange={event => updateAPIKey(event.target.value)}/>
 
 				<label htmlFor="api_secret">API Secret</label>
-				<input type="text" name="api_secret" value={api_secret} onChange={event => setAPISecret(event.target.value)}/>
+				<input type="text" name="api_secret" value={api_secret} onChange={event => updateAPISecret(event.target.value)}/>
 
 				<input type="submit" value="Log In"/>
 			</form>
