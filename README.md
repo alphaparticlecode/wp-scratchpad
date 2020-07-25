@@ -12,7 +12,9 @@ For WP Scratchpad to work properly, you have to have a few things:
 - [x] The WordPress REST API endpoints accessible and not blocked by any security plugins or firewalls (the REST API ships as part of WP Core, so if you're unsure, you probably have it enabled)
 - [x] HTTPS enabled (we want to make sure the connection between the Chrome extension and your WordPress site is secure)
 - [ ] The latest version of the [JWT-Auth plugin](https://github.com/WP-API/jwt-auth/archive/develop.zip) installed and activated (don't worry if you don't have this yet, this is part of the instructions) 
-- [ ] The latest version of WP Scratchpad downloaded from the Chrome Web Store and activated in your browser (we'll cover this in the instructions below as well.) 
+- [ ] The latest version of WP Scratchpad downloaded from the Chrome Web Store and activated in your browser (we'll cover this in the instructions below as well.)
+
+**If you'd rather watch instead of reading, check out the [Getting Started video](youtube.com) (<10 mins).**
 
 ### Setting up JWT Auth
 
