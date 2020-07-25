@@ -1,7 +1,9 @@
 # WP Scratchpad
-WP Scratchpad is a Chrome extension for quickly and easily creating draft posts on your WordPress site, no matter where you are on the web. It lives in your browser bar so that whenever inspirataion for a blog post strikes, you can quickly jot down the idea, provide any relevant links, save the post as a draft and get back to browsing. All in just a few clicks and _without_ having to log in to your WordPress site! Since this is a browser extension that works inside _your_ browser, your post ideas and WordPress credentials never leave your hands and you can revoke the extension's access to WordPress at any time.
+WP Scratchpad is a Chrome extension for quickly and easily creating draft posts on your WordPress site, no matter where you are on the web. It lives in your browser bar so that whenever inspirataion for a blog post strikes, you can quickly jot down the idea, provide any relevant links, save the post as a draft and get back to browsing. All in just a few clicks and _without_ having to log in to your WordPress site!
 
 ![WP Scratchpad in Action](https://github.com/alphaparticlecode/wp-scratchpad/blob/master/artwork/demo.jpg)
+
+Since this is a browser extension that works inside _your_ browser, your post ideas and WordPress credentials never leave your hands and you can revoke the extension's access to WordPress at any time.
 
 ## Getting Started
 
