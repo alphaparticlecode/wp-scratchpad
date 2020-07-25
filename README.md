@@ -7,12 +7,38 @@ Since this is a browser extension that works inside _your_ browser, your post id
 
 ## Getting Started
 
-For this Chrome Extension to work properly, you have to have a few things:
+For WP Scratchpad to work properly, you have to have a few things:
 - [x] A publicly-accessible WordPress site (we don't support localhost, *.local, *.test, or sites behind a firewall right now)
 - [x] The WordPress REST API endpoints accessible and not blocked by any security plugins or firewalls (the REST API ships as part of WP Core, so if you're unsure, you probably have it enabled)
 - [x] HTTPS enabled (we want to make sure the connection between the Chrome extension and your WordPress site is secure)
 - [ ] The latest version of the [JWT-Auth plugin](https://github.com/WP-API/jwt-auth/archive/develop.zip) installed and activated (don't worry if you don't have this yet, this is part of the instructions) 
 - [ ] The latest version of WP Scratchpad downloaded from the Chrome Web Store and activated in your browser (we'll cover this in the instructions below as well.) 
+
+### Setting up JWT Auth
+
+#### Downloading and activating the plugin
+[zip from here](https://github.com/WP-API/jwt-auth/archive/develop.zip)
+
+#### Generating and distributing key pairs for each author
+
+### Setting up WP Scratchpad
+
+#### Downloading and activating the extension
+
+#### Providing Site URL and JWT credentials
+
+#### Drafting your first post
+
+### Advanced Techniques
+
+#### HTML as part of draft posts
+
+#### Converting to blocks
+
+### Questions? Issues?
+Send an email to [keanan@alphaparticle.com](mailto:keanan@alphaparticle.com) providing as much information as possible regarding the version of WordPress you are running, the version of Chrome you are running and what you did leading up to the issue.
+
+-----------
 
 # For Nerds ▼ ▼ ▼
 
