@@ -21,6 +21,8 @@ For WP Scratchpad to work properly, you have to have a few things:
 
 #### Generating and distributing key pairs for each author
 
+#### Revoking key pairs
+
 ### Setting up WP Scratchpad
 
 #### Downloading and activating the extension
