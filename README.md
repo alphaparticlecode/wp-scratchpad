@@ -1,3 +1,14 @@
+# Getting Started
+
+For this Chrome Extension to work properly, you have to have a few things:
+- [x] A publicly-accessible WordPress site (we don't support localhost, *.local, *.test, or sites behind a firewall right now)
+- [x] The WordPress REST API endpoints accessible and not blocked by any security plugins or firewalls (the REST API ships as part of WP Core, so if you're unsure, you probably have it enabled)
+- [x] HTTPS enabled (we want to make sure the connection between the Chrome extension and your WordPress site is secure)
+- [ ] The latest version of the [JWT-Auth plugin](https://github.com/WP-API/jwt-auth/archive/develop.zip) installed and activated (don't worry if you don't have this yet, this is part of the instructions) 
+- [ ] The latest version of WP Scratchpad downloaded from the Chrome Web Store and activated in your browser (we'll cover this in the instructions below as well.) 
+
+# For Nerds ▼ ▼ ▼
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
