@@ -17,13 +17,20 @@ For WP Scratchpad to work properly, you have to have a few things:
 **If you'd rather watch instead of reading, check out the [Getting Started video](youtube.com) (<10 mins).**
 
 ### Setting up JWT Auth
+This step only needs to be done once by the administrator of the site. Once the plugin is installed and activated, unique key pairs can be generated and distributed to each author that wants to use WP Scratchpad.
 
 #### Downloading and activating the plugin
-[zip from here](https://github.com/WP-API/jwt-auth/archive/develop.zip)
+To start, you'll need the JWT Auth plugin installed on your WordPress site. [Download the ZIP version of the plugin from Github](https://github.com/WP-API/jwt-auth/archive/develop.zip) and upload it to your WordPress site by going to the *Plugins* menu, clicking on *Add New* and then *Upload Plugin*. From there you'll be able to select the ZIP file, confirm the upload and activate the plugin.
 
 #### Generating and distributing key pairs for each author
+Once the plugin is activated, you'll notice that on each user's profile in wp-admin there is a new section called *API Key-pairs*. This is where you can generate the API Key and API Secret that WP Scratchpad will use to make the connection to your WordPress site.
+
+Where you see *New key-pair*, type *WP Scratchpad* for the name and click on *Add New*. You'll notice a pop up with your API Secret. **Once you dismiss this pop-up, you'll never be able to access the API Secret again.** So make sure you copy it down or, even easier, download the JSON file with both your API Key and API Secret. If you're going to be generating key pairs for multiple authors, downloading this JSON file for each author and sending it to them is the easiest way to get them up and running with their own copy of WP Scratchpad.
+
+Repeat this process on each author's profile who you want to be able to use WP Scratchpad, making sure you send each author the unique keypair that you generated on their profile page. This will ensure they can use WP Scratchpad properly and that the drafts they create are attributed to them properly within WordPress.
 
 #### Revoking key pairs
+If for any reason you need to disable an author's access to post drafts through WP Scratchpad, you can go to their profile within wp-admin, find the key pair that you created for them and click on the *Revoke* button. This will immediately remove the ability for their copy of WP Scratchpad to post drafts into WordPress. If they try to create a new draft through WP Scratchpad, they will see the error message *"There was an error submitting your post. Please make sure your WordPress site is responding or try again later."*
 
 ### Setting up WP Scratchpad
 
