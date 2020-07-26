@@ -109,7 +109,7 @@ function Login() {
 			fetch(validateUrl, requestOptions)
 			.then(response => response.json())
 			.then(data => {
-				// if( data.code !== 'rest_authentication_valid_access_token' ){
+				if( data.code !== 'rest_authentication_valid_access_token' ){
 					const requestOptions = {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
