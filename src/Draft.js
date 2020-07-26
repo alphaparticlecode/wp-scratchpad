@@ -14,7 +14,7 @@ function Draft() {
 	else {
 		componentVisible = false;
 	}
-	const [draftFormVisible, setDraftVisibility] = useState(componentVisible);
+	const [draftFormVisible] = useState(componentVisible);
 
 	function stripScripts(s) {
 	    var div = document.createElement('div');

@@ -11,8 +11,6 @@ function Login() {
 	const [api_key, setAPIKey] = useState( localStorage.getItem('temp-APIKEY') );
 	const [api_secret, setAPISecret] = useState( localStorage.getItem('temp-APISECRET') );
 
-	const [last_updated, setLastUpdated] = useState();
-
 	useEffect(function(){
 		validateOrRefreshJWT();
 	}, []);
@@ -66,8 +64,6 @@ function Login() {
 		localStorage.setItem('scratchpadJWT', '');
 		localStorage.setItem('scratchpadJWTRefresh', '');
 		localStorage.setItem('username', '');
-
-		setLastUpdated(Date.now());
 
 		window.location.reload(false);
 	}
