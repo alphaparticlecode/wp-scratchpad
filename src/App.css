@@ -34,3 +34,8 @@
 	margin-left: 5px;
 	vertical-align: middle;
 }
+
+input:focus, button:focus {
+	outline: none !important;
+    border: 2px solid #7789A2;
+}

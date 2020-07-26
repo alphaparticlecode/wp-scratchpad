@@ -177,7 +177,7 @@ function Login() {
 			
 			<button onClick={loginVisible} className={`${username ? 'hidden' : ''}`}>{username ? 'Login' : 'Log In'}</button>
 			
-			<form action="" onSubmit={saveLogin} className={`${loginFormVisible ? '' : 'hidden'}`}>
+			<form action="" onSubmit={saveLogin} className={`login-form ${loginFormVisible ? '' : 'hidden'}`}>
 				<p className={`errors ${hasErrors ? '' : 'hidden'}`}>{errorMessage}</p>
 				<label htmlFor="api_key">API Key</label>
 				<input type="text" name="api_key" value={api_key} onChange={event => updateAPIKey(event.target.value)}/>
