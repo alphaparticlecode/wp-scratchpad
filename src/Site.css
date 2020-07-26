@@ -1,5 +1,4 @@
 .site {
-	border-bottom: 1px solid #ccc;
 	display: block;
 	padding: 10px;
 	padding-top: 0;
@@ -10,10 +9,16 @@
 }
 
 .site .hidden {
+	display: none;
 	transition: height 500ms 500ms, opacity 500ms 0ms;
 	opacity: 0.0;
 	overflow: hidden;
 	height: 0px;
+}
+
+.site svg {
+	cursor: pointer;
+	vertical-align: middle;
 }
 
 .site label {
@@ -24,14 +29,17 @@
 }
 
 .site input {
-	border: 1px solid #ccc;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #ccc;
 	box-shadow: none;
 	border-radius: 5px;
-	display: block;
+	display: inline-block;
 	font-size: 14px;
-	height: 30px;
-	margin-top: 10px;
+	height: 15px;
+	margin-top: 0px;
+	max-width: 75%;
 	padding: 10px;
+	vertical-align: middle;
 	width: 100%;
 }
 
@@ -40,8 +48,12 @@
 	font-size: 14px;
 	margin-top: 0;
 	margin-bottom: 0;
-	margin-right: 20px;
+	margin-right: 10px;
 	vertical-align: middle;
+}
+
+.site form {
+	margin-top: -10px;
 }
 
 .site button {
@@ -65,17 +77,21 @@
 	color: red;
 	font-size: 12px;
 	font-weight: bold;
+	margin-top: 0;
 }
 
 .site input[type="submit"] {
-	background-color: #28a745;
-    border-color: #28a745;
-    border-radius: 5px;
-    color: white;
+	background: #7789A2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z' /%3E%3C/svg%3E");
+    background-size: 75%;
+    background-position: center center;
+    border-color: #7789A2;
+    border-radius: 20px;
+    color: black;
     cursor: pointer;
     font-size: 16px;
-    height: auto;
     padding: 10px;
+    margin-left: 15px;
     margin-top: 10px;
-    max-width: 100px;
+    width: 25px;
+    height: 25px;
 }
