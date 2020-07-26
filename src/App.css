@@ -3,10 +3,10 @@
 
 .App {
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 25px;
   padding: 20px;
+  padding-bottom: 5px;
   width: 525px;
-  min-height: 400px;
+  min-height: 230px;
 }
 
 .container {
