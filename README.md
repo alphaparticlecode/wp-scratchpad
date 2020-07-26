@@ -49,10 +49,18 @@ Now that you've saved the URL to your site and WP Scratchpad has made a successf
 Congratulations! You've just drafted your first post with WP Scratchpad!
 
 ### Advanced Techniques
+Now that you've created your first post, read on to learn about some of the more advanced techniques you can use to get the most out of WP Scratchpad
 
 #### HTML as part of draft posts
+The *Post Content* field supports many HTML tags. So if you want to save a more comprenhensive outline of your post instead of just a couple sentences, you can use tags like `<h1>` or `<h2>`, which will be rendered correctly in either the Classic Editor or Gutenberg. Embeds such as Youtube and other embeds that WordPress supports will be handled correctly as well, if you inclulde them in *Post Content*.
+
+#### Block Editor (Gutenberg) Support
+If the block editor is active on your site, all of your post content that comes from WP Scratchpad will be contained within one Classic Editor block. You can either leave this block at the top of your post as a reminder while writing and delete it before you publish your post, or you can let the block editor convert it into blocks (see below).
 
 #### Converting to blocks
+If you have inserted some HTML and maybe an embed, your one Classic block that is inserted into your draft by default may be getting a little cluttered. If you select the 3 dots (⋮) menu for the Classic block, you'll see an option to *Convert to blocks*. The block editor will make best guesses about your content and try to split the content into it's respective blocks.
+
+Let's say you have an `<h2>` tag with some content in it, then just a paragraph of notes about your draft, and then a Youtube link to remind yourself why you got the idea in the first place. *Convert to blocks* will convert your one Classic block into a Heading block, a Paragraph block, and a Youtube block, making your content more closely resemble a piece of content composed entirely in the block editor. For an example of this, check out the end of the [Getting Started video](https://youtube.com)
 
 ### Questions? Issues?
 Send an email to [keanan@alphaparticle.com](mailto:keanan@alphaparticle.com) providing as much information as possible regarding the version of WordPress you are running, the version of Chrome you are running and what you did leading up to the issue.
