@@ -33,12 +33,20 @@ Repeat this process on each author's profile who you want to be able to use WP S
 If for any reason you need to disable an author's access to post drafts through WP Scratchpad, you can go to their profile within wp-admin, find the key pair that you created for them and click on the *Revoke* button. This will immediately remove the ability for their copy of WP Scratchpad to post drafts into WordPress. If they try to create a new draft through WP Scratchpad, they will see the error message *"There was an error submitting your post. Please make sure your WordPress site is responding or try again later."*
 
 ### Setting up WP Scratchpad
+Now that you've got the WordPress side configured and ready to go, you're ready to download the Chrome extension and start drafting posts!
 
 #### Downloading and activating the extension
+Open up the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and search for *WP Scratchpad*. Once you find it in the search results (hopefully it's the #1 result!), click on *Add to Chrome* and in the resulting pop up click *Add extension*. Once the extension is added and activated, you should see the WP Scratchpad icon to the right of the URL bar. You can click on this icon at any time to bring up WP Scratchpad.
 
 #### Providing Site URL and JWT credentials
+The first time you download WP Scratchpad, you have to connect it to your site. First, enter the base URL of your site. If you're not sure what that is, you can look at the URL that's in the URL bar when you are logged into wp-admin and remove everything after and including */wp-admin/*. For example, if the URL of my WordPress admin area is https://loremipsum.com/wp-admin, the base URL for my site is https://loremipsum.com. Make sure to include the *https://* when you're typing in your URL. When you are done entering your URL, click *Save Site*.
+
+Once your URL is entered, click on *Log In* and you will be prompted to enter your API Key and API Secret. These are the two values you got earlier when you were setting up WordPress. Copy and paste both of these values and click on *Log In* and WP Scratchpad should update with your username, letting you know you have logged in successfully. Remember that each author who you grant access to on the WordPress site has a different API Key and API Secret and should use their own to make sure drafts are properly attributed.
 
 #### Drafting your first post
+Now that you've saved the URL to your site and WP Scratchpad has made a successful connection to WordPress, you're ready to draft your first post! You should see inputs for the post title and post content. Input a post title (you can always change this later in WordPress) as well as the post content, including any notes or links you want to have saved. When you're ready, click *Post as Draft* and your title and content will be saved in WordPress as a draft post. Once your post is saved, you'll see the text *"Your post has been saved."* along with a link to *Edit in WordPress*. Clicking this link will take you directly into your new draft post in WordPress (or ask you to log in first) where you can make any additional edits.
+
+Congratulations! You've just drafted your first post with WP Scratchpad!
 
 ### Advanced Techniques
 
