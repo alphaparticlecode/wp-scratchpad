@@ -1,19 +1,24 @@
 .login {
-    border-bottom: 1px solid #ccc;
-    display: block;
-    margin: 0 auto;
-    max-width: 400px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
+    display: inline-block;
+    margin-top: 5px;
+    max-width: 50%;
+    text-align: right;
     transition: height 500ms 0ms, opacity 500ms 500ms;
 }
 
+.login .user-avatar {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
 .login .hidden {
-    transition: height 500ms 500ms, opacity 500ms 0ms;
-    opacity: 0.0;
-    overflow: hidden;
-    height: 0px;
+    display: none;
 }
 
 .login label {
@@ -39,7 +44,6 @@
     font-size: 14px;
 	margin-top: 0;
 	margin-bottom: 0;
-	margin-right: 20px;
 	vertical-align: middle;
 }
 
@@ -83,6 +87,40 @@
     width: 100%;
 }
 
+.user-avatar, .currentuser, .user svg {
+    position: relative;
+    z-index: 99;
+}
+
+.user {
+    position: relative;
+}
+
+.user .submenu {
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+    height: 45px;
+    line-height: 70px;
+    padding: 20px 10px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 100%;
+}
+
+.user:hover .submenu {
+    display: block;
+}
+
+.user svg {
+    height: 15px !important;
+    margin-left: 5px;
+    transform: rotate(-180deg);
+    vertical-align: middle;
+    width: 15px !important;
+}
+
 .login .logout {
-    margin-left: 10px;
+    border: none;
 }

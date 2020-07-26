@@ -1,5 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
 .App {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 25px;
-  min-width: 500px;
-  text-align: center;
+  padding: 20px;
+  width: 500px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.logo-lockup {
+	align-items: center;
+	display: flex;
+	max-width: 50%;
+}
+
+.logo {
+	display: inline-block;
+	max-width: 40px;
+	vertical-align: middle;
+}
+
+.tagline {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 500;
+	margin-top: 5px;
+	margin-bottom: 0;
+	margin-left: 5px;
+	vertical-align: middle;
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Login.css';
 
+import { ReactComponent as Chevron } from './svgs/chevron.svg';
+
 function Login() {
 	const [hasErrors, setErrors] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
@@ -8,6 +10,7 @@ function Login() {
 	const [loginFormVisible, setLoginVisibility] = useState(false);
 
 	const [username, setUsername] = useState('');
+	const [userAvatar, setUserAvatar] = useState('');
 	const [api_key, setAPIKey] = useState( localStorage.getItem('temp-APIKEY') );
 	const [api_secret, setAPISecret] = useState( localStorage.getItem('temp-APISECRET') );
 
@@ -43,6 +46,21 @@ function Login() {
 
 				setUsername(data.data.user.user_login);
 				localStorage.setItem('username', data.data.user.user_login);
+
+				const userID = data.data.user.id;
+				var userUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/users/' + userID;
+
+				fetch(userUrl)
+				.then(response => response.json())
+				.then(data => {
+					var userAvatar = data.avatar_urls[48];
+
+					setUserAvatar(userAvatar);
+					localStorage.setItem('userAvatar', userAvatar);
+
+					setUsername(data.name);
+					localStorage.setItem('username', data.name);
+				});
 
 				localStorage.setItem('scratchpadJWT', data.access_token);
 				localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
@@ -91,7 +109,7 @@ function Login() {
 			fetch(validateUrl, requestOptions)
 			.then(response => response.json())
 			.then(data => {
-				if( data.code !== 'rest_authentication_valid_access_token' ){
+				// if( data.code !== 'rest_authentication_valid_access_token' ){
 					const requestOptions = {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
@@ -116,6 +134,21 @@ function Login() {
 							setUsername(data.data.user.user_login);
 							localStorage.setItem('username', data.data.user.user_login);
 
+							const userID = data.data.user.id;
+							var userUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/users/' + userID;
+
+							fetch(userUrl)
+							.then(response => response.json())
+							.then(data => {
+								var userAvatar = data.avatar_urls[48];
+
+								setUserAvatar(userAvatar);
+								localStorage.setItem('userAvatar', userAvatar);
+
+								setUsername(data.name);
+								localStorage.setItem('username', data.name);
+							});
+
 							localStorage.setItem('scratchpadJWT', data.access_token);
 							localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
 
@@ -133,11 +166,18 @@ function Login() {
 
 	return (
 		<div className="login">
-			<div className={`${loginFormVisible ? 'hidden' : ''}`}>
-				<p className="currentuser">Current User: {username ? username : 'Not Logged In'}</p>
-				<button onClick={loginVisible}>{username ? 'Edit Login' : 'Log In'}</button>
-				<button className={`logout ${username ? '' : 'hidden'}`} onClick={logOut}>Log Out</button>
+			<div className={`user ${username ? '' : 'hidden'}`}>
+				<div className="user-avatar" style={{backgroundImage: `url('${userAvatar}')`}}></div>
+				<p className="currentuser">{username}</p>
+
+				<Chevron />
+
+				<div className="submenu">
+					<button className="logout" onClick={logOut}>Log Out</button>
+				</div>
 			</div>
+			
+			<button onClick={loginVisible} className={`${username ? 'hidden' : ''}`}>{username ? 'Login' : 'Log In'}</button>
 			
 			<form action="" onSubmit={saveLogin} className={`${loginFormVisible ? '' : 'hidden'}`}>
 				<p className={`errors ${hasErrors ? '' : 'hidden'}`}>{errorMessage}</p>
