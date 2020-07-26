@@ -44,6 +44,9 @@ function Login() {
 				localStorage.setItem('temp-APIKEY', '');
 				localStorage.setItem('temp-APISECRET', '');
 
+				localStorage.setItem('scratchpadJWT', data.access_token);
+				localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
+
 				const userID = data.data.user.id;
 				var userUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/users/' + userID;
 
@@ -57,9 +60,6 @@ function Login() {
 
 					setUsername(data.name);
 					localStorage.setItem('username', data.name);
-
-					localStorage.setItem('scratchpadJWT', data.access_token);
-					localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
 
 					setLoginVisibility(false);
 
@@ -179,11 +179,9 @@ function Login() {
 			
 			<form action="" onSubmit={saveLogin} className={`login-form ${loginFormVisible ? '' : 'hidden'}`}>
 				<p className={`errors ${hasErrors ? '' : 'hidden'}`}>{errorMessage}</p>
-				<label htmlFor="api_key">API Key</label>
-				<input type="text" name="api_key" value={api_key} onChange={event => updateAPIKey(event.target.value)}/>
+				<input type="text" name="api_key" value={api_key} onChange={event => updateAPIKey(event.target.value)} placeholder="API Key"/>
 
-				<label htmlFor="api_secret">API Secret</label>
-				<input type="text" name="api_secret" value={api_secret} onChange={event => updateAPISecret(event.target.value)}/>
+				<input type="text" name="api_secret" value={api_secret} onChange={event => updateAPISecret(event.target.value)} placeholder="API Secret"/>
 
 				<input type="submit" value="Log In"/>
 			</form>

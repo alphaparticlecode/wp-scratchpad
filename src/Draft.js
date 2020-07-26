@@ -50,6 +50,7 @@ function Draft() {
 		fetch(postUrl, requestOptions)
 			.then(response => response.json())
 			.then(post => {
+				console.log(post);
 				if( post.id ) {
 					setErrors(false);
 
