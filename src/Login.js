@@ -9,8 +9,8 @@ function Login() {
 
 	const [loginFormVisible, setLoginVisibility] = useState(false);
 
-	const [username, setUsername] = useState('');
-	const [userAvatar, setUserAvatar] = useState('');
+	const [username, setUsername] = useState(localStorage.getItem('username'));
+	const [userAvatar, setUserAvatar] = useState(localStorage.getItem('userAvatar'));
 	const [api_key, setAPIKey] = useState( localStorage.getItem('temp-APIKEY') );
 	const [api_secret, setAPISecret] = useState( localStorage.getItem('temp-APISECRET') );
 
@@ -44,9 +44,6 @@ function Login() {
 				localStorage.setItem('temp-APIKEY', '');
 				localStorage.setItem('temp-APISECRET', '');
 
-				setUsername(data.data.user.user_login);
-				localStorage.setItem('username', data.data.user.user_login);
-
 				const userID = data.data.user.id;
 				var userUrl = localStorage.getItem('scratchpadSiteURL') + 'wp/v2/users/' + userID;
 
@@ -60,14 +57,14 @@ function Login() {
 
 					setUsername(data.name);
 					localStorage.setItem('username', data.name);
+
+					localStorage.setItem('scratchpadJWT', data.access_token);
+					localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
+
+					setLoginVisibility(false);
+
+					window.location.reload(false);
 				});
-
-				localStorage.setItem('scratchpadJWT', data.access_token);
-				localStorage.setItem('scratchpadJWTRefresh', data.refresh_token);
-
-				setLoginVisibility(false);
-
-				window.location.reload(false);
 			}
 		});
 
@@ -82,6 +79,7 @@ function Login() {
 		localStorage.setItem('scratchpadJWT', '');
 		localStorage.setItem('scratchpadJWTRefresh', '');
 		localStorage.setItem('username', '');
+		localStorage.setItem('userAvatar', '');
 
 		window.location.reload(false);
 	}
