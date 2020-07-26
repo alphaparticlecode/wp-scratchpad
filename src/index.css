@@ -5,6 +5,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-textarea, button {
+textarea, button, input {
   font-family: 'Montserrat', sans-serif !important;
 }
