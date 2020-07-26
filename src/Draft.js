@@ -78,11 +78,8 @@ function Draft() {
 			<form action="" onSubmit={savePostDraft} className={`${draftFormVisible ? '' : 'hidden'}`}>
 				<p className={`errors ${hasErrors ? '' : 'hidden'}`}>{errorMessage}</p>
 				<p className={`postLink ${postLink ? '' : 'hidden'}`}>Your post has been saved. <a href={postLink} rel="noopener noreferrer" target="_blank">Edit in WordPress</a></p>
-				<label htmlFor="postTitle">Post Title</label>
-				<input type="text" name="postTitle" value={postTitle} onChange={event => setPostTitle(event.target.value)}/>
-
-				<label htmlFor="postContent">Post Content</label>
-				<textarea name="postContent" value={postContent} id="postContent" cols="30" rows="10" onChange={event => setpostContent(event.target.value)} />
+				<input type="text" name="postTitle" value={postTitle} onChange={event => setPostTitle(event.target.value)} placeholder="Post Title"/>
+				<textarea name="postContent" value={postContent} id="postContent" cols="30" rows="10" onChange={event => setpostContent(event.target.value)} placeholder="Post Content" />
 
 				<input type="submit" value="Post as Draft"/>
 			</form>

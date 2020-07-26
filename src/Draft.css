@@ -1,6 +1,7 @@
 .draft {
 	display: block;
 	padding: 10px;
+	padding-top: 0px;
 	margin: 0 auto;
 	max-width: 500px;
 	text-align: left;
