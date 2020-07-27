@@ -61,8 +61,10 @@
 }
 
 .login button {
-	background: transparent;
-    border: 1px solid #ccc;
+	background-color: #7789A2;
+    border: 1px solid #7789a2;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
     display: inline-block;
     margin: 0 auto;
